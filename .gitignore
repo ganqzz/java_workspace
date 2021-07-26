@@ -11,6 +11,8 @@ target/
 .DS_Store
 
 *.log
+*.class
+*.jar
 .env
 
 !.keep

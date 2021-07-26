@@ -1,0 +1,10 @@
+/.classpath
+/.project
+/.settings
+/target
+/tmp
+/.idea
+/.navigation
+*.iml
+/web.bat
+/web.sh

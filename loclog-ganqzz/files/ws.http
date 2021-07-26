@@ -1,0 +1,78 @@
+
+### GET Auth error 401
+
+GET http://localhost:10080/loclog
+
+
+### GET loclog list
+
+GET http://localhost:10080/loclog
+Authorization: Basic aG9nZTpob2dl
+
+
+### GET loclog list with pagination
+
+GET http://localhost:10080/loclog/page/2?per=50
+Authorization: Basic aG9nZTpob2dl
+
+
+### GET loclog list (Heroku)
+
+GET https://loclog-ganqzz.herokuapp.com/loclog
+Authorization: Basic aG9nZTpob2dl
+
+
+### POST
+
+POST http://localhost:10080/loclog
+Authorization: Basic aG9nZTpob2dl
+Content-Type: application/json
+
+{
+  "tag":"てすと",
+  "address":"住     所",
+  "latitude":135.5,
+  "longitude":35.8,
+  "fixTime":1234,
+  "note":"の&ーと",
+  "imageUri":"Uri写真Uri",
+  "image":"写*真",
+  "open":false
+}
+
+
+### POST wrong format
+
+POST http://localhost:10080/loclog
+Authorization: Basic aG9nZTpob2dl
+Content-Type: application/json
+
+{
+  "tag":"てすと",
+  "address":"住     所",
+  "latitude":135.5,
+  "longitude":35.8\n,
+  "fixTime":1234,
+  "note":"の&ーと",
+  "image":"写*真",
+  "open":false
+}
+
+
+### POST wrong field type
+
+POST http://localhost:10080/loclog
+Authorization: Basic aG9nZTpob2dl
+Content-Type: application/json
+
+{
+  "tag":"てすと",
+  "address":"住所",
+  "latitude":"hogehoge",
+  "longitude":"fugafuga",
+  "fixTime":"fefe",
+  "note":"のーと",
+  "image":"写真",
+  "open":false
+}
+
