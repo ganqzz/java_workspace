@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+    layoutX="10.0" layoutY="10.0" prefHeight="250.0" prefWidth="300.0" spacing="10">
+  <children>
+    <ListView>
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Monday" />
+          <String fx:value="Tuesday" />
+          <String fx:value="Wednesday" />
+          <String fx:value="Thursday" />
+          <String fx:value="Friday" />
+          <String fx:value="Saturday" />
+          <String fx:value="Sunday" />
+        </FXCollections>
+      </items>
+    </ListView>
+    <Label text="Types of Vehicles" />
+    <ComboBox>
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Mustang" />
+          <String fx:value="Hummer" />
+          <String fx:value="Jeep Cherokee" />
+          <String fx:value="Jeep Wrangler" />
+          <String fx:value="Subaru Forrester" />
+          <String fx:value="Toyota Prius" />
+        </FXCollections>
+      </items>
+      <value><!-- selected -->
+        <String fx:value="Hummer" />
+      </value>
+    </ComboBox>
+  </children>
+</VBox>

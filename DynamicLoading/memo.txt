@@ -1,0 +1,8 @@
+# ClassLoaderによる動的ローディング
+    - classpathには、Interfaceだけが含まれていればよい。
+    - 実行時に、実装を切り替えることができる（設定ファイルなど）。
+    - Factory pattern (AbstractFactory Patternではない)
+    - 便宜上、ひとつのプロジェクトで済ましているので、antで実行確認すること（このディレクトリ）。
+
+```
+```

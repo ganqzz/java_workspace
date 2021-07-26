@@ -1,0 +1,11 @@
+- Undo
+
+- AutoMove
+
+- Drag キャンセル（srcとdestがいっしょ）のとき、
+	選択したカードとすぐ下のカード（faceDown）の順番がlegalのとき、
+	誤って、flipしてしまう。fixed
+
+- Application(JFrame)化
+- Canvas -> JPanel
+

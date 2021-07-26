@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="radiobutton.FXMLDocumentController">
+  <children>
+    <Button fx:id="button" layoutX="126" layoutY="120" text="Click Me!"
+        onAction="#handleButtonAction" />
+    <Label fx:id="msglbl" layoutX="126" layoutY="170" minHeight="16" minWidth="69" />
+    <VBox spacing="10" layoutX="20" layoutY="20">
+      <VBox spacing="10">
+        <fx:define>
+          <ToggleGroup fx:id="tgroup" />
+        </fx:define>
+        <children>
+          <Label layoutX="10" layoutY="20" text="Choose the time, then click the button:" />
+          <RadioButton fx:id="morning" text="12 AM - 10 AM" toggleGroup="$tgroup" userData="Morning"/>
+          <RadioButton fx:id="afternoon" text="10 AM - 3 PM" toggleGroup="$tgroup" userData="Afternoon"/>
+          <RadioButton fx:id="evening" text="3 PM - Midnight" toggleGroup="$tgroup" userData="Evening"/>
+        </children>
+      </VBox>
+    </VBox>
+  </children>
+</AnchorPane>

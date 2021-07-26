@@ -1,0 +1,23 @@
+.button {
+    -fx-background-radius: 8;
+}
+
+.hbox, .vbox {
+    -fx-background-color: steelblue;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-alignment: CENTER;
+}
+
+.text, .hbox, .vbox {
+    -fx-font-family: Verdana;
+    -fx-font-size: 14px;
+}
+
+.label {
+    -fx-text-fill: #444444;
+}
+
+.chart-legend {
+    -fx-background-color: wheat;
+}

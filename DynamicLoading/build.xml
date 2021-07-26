@@ -1,0 +1,61 @@
+<project name="CameraFactory" default="build" basedir=".">
+
+	<!-- set global properties for this build -->
+	<property name="src" value="src" />
+	<property name="build" value="classes" />
+	<property name="out" value="out" />
+
+	<path id="project.class.path">
+		<pathelement location="D:/usr/JavaLib/jackson-core-2.7.0.jar" />
+		<pathelement location="D:/usr/JavaLib/jackson-annotations-2.7.0.jar" />
+		<pathelement location="D:/usr/JavaLib/jackson-databind-2.7.0.jar" />
+		<pathelement location="CameraLibInterface.jar" />
+		<pathelement location="${build}" />
+	</path>
+
+	<target name="prepare">
+		<tstamp />
+		<!-- create the extra class directories because some labs copy to them -->
+		<property name="libInterface" value="libInterface" />
+		<property name="libImplementation" value="libImplementation" />
+		<property name="libInterfaceOut" value="out/libInterface" />
+		<property name="libImplementationOut" value="out/libImplementation" />
+		<property name="lib" value="lib" />
+	</target>
+
+	<target name="buildClient" depends="prepare" description="build client code">
+		<mkdir dir="${build}" />
+		<javac srcdir="${src}" destdir="${build}" debug="on" classpathref="project.class.path" includeantruntime="false" />
+	</target>
+
+	<target name="compileLibInterface" depends="prepare" if="libInterface" description="compile lib code">
+		<mkdir dir="${libInterfaceOut}" />
+		<javac srcdir="${libInterface}" destdir="${libInterfaceOut}" debug="on" includeantruntime="false" />
+	</target>
+
+	<target name="buildLibInterface" depends="prepare, compileLibInterface" if="libInterface" description="build lib code">
+		<jar basedir="${libInterfaceOut}" destfile="CameraLibInterface.jar" />
+	</target>
+
+	<target name="compileLib" depends="prepare" if="libImplementation" description="compile lib code">
+		<mkdir dir="${libImplementationOut}" />
+		<javac srcdir="${libImplementation}" destdir="${libImplementationOut}" debug="on" classpath="CameraLibInterface.jar" includeantruntime="false" />
+	</target>
+
+	<target name="buildLib" depends="prepare, compileLib, compileLibInterface" if="libImplementation" description="build lib code">
+		<jar basedir="${libImplementationOut}" destfile="CameraLibImplementation.jar" />
+	</target>
+
+	<target name="build" depends="buildClient, buildLib, buildLibInterface" description="build application">
+	</target>
+
+	<target name="run" depends="build" description="run application">
+		<java classname="com.pluralsight.ConfigurationMain" classpathref="project.class.path" fork="true" />
+	</target>
+
+	<target name="clean" depends="prepare" description="clean application">
+		<delete dir="${out}" />
+		<delete dir="${build}" />
+	</target>
+
+</project>

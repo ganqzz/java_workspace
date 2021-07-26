@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+  <session-factory>
+
+    <!-- Schema generation/migration -->
+    <!--<property name="hbm2ddl.auto">create</property>-->
+    <!--<property name="hbm2ddl.auto">validate</property>-->
+    <!--<property name="hbm2ddl.auto">update</property>-->
+    <!--<property name="hbm2ddl.auto">create-drop</property>-->
+
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/ifinances?useSSL=false</property>
+    <property name="connection.username">ganq</property>
+    <property name="connection.password">hawkeye</property>
+
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+    <!-- Echo all executed SQL to stdout -->
+    <property name="show_sql">true</property>
+
+    <mapping class="hbdemo.entities.User" />
+    <mapping class="hbdemo.entities.Bank" />
+    <mapping class="hbdemo.entities.Credential" />
+    <mapping class="hbdemo.entities.Account" />
+    <mapping class="hbdemo.entities.Transaction" />
+    <mapping class="hbdemo.entities.Budget" />
+    <mapping class="hbdemo.entities.Currency" />
+    <mapping class="hbdemo.entities.Market" />
+    <mapping class="hbdemo.entities.Stock" />
+    <mapping class="hbdemo.entities.Bond" />
+    <mapping class="hbdemo.entities.Portfolio" />
+    <mapping class="hbdemo.entities.UserCredentialView" />
+    <mapping class="hbdemo.entities.mappedsuperclass.Stock" />
+    <mapping class="hbdemo.entities.mappedsuperclass.Bond" />
+    <mapping class="hbdemo.entities.tableperclass.Stock" />
+    <mapping class="hbdemo.entities.tableperclass.Bond" />
+    <mapping class="hbdemo.entities.tableperclass.Portfolio" />
+
+    <mapping class="hbdemo.entities.TimeTest" />
+
+  </session-factory>
+
+</hibernate-configuration>

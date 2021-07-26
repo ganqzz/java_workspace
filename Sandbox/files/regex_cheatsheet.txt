@@ -1,0 +1,11 @@
+^	The beginning of a line
+$ 	The end of a line
+
+\b 	A word boundary
+\B 	A non-word boundary
+
+\G 	The end of the previous match
+
+\A 	The beginning of the input
+\z 	The end of the input
+\Z 	The end of the input but for the final terminator, if any

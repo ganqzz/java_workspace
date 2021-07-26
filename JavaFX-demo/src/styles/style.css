@@ -1,0 +1,23 @@
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-background-radius: 5;
+}
+
+#textstyle {
+    -fx-font: 30px "Arial";
+    -fx-font-weight: bold;
+    -fx-fill: white;
+}
+
+#center {
+    -fx-background-color: #2f4f4f;
+    -fx-fill: tan;
+    -fx-alighment: center;
+}
+
+.button, #center {
+    -fx-font: 18px "Verdana";
+}

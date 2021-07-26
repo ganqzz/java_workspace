@@ -1,0 +1,4 @@
+{
+  "factoryType": "com.pluralsight.CanonCameraFactory",
+  "location": "file:./CameraLibImplementation.jar"
+}

@@ -1,0 +1,17 @@
+/_org/
+/_orz/
+/tmp/
+out/
+build/
+target/
+
+*.iml
+.idea/
+/.vscode/
+.DS_Store
+
+*.log
+.env
+
+!.keep
+!.gitkeep
